@@ -4,3 +4,18 @@ author: "Luan Mengxiao"
 date: 2023-09-14
 output: github_document
 ---
+
+This is a R Markdown document for homework 1.
+
+# Problem 1
+
+```{r setup, include = FALSE}
+install.packages("moderndive")
+```
+
+```{r loading}
+library(moderndive)
+data("early_january_weather")
+```
+
+
