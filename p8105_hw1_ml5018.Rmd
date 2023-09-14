@@ -41,8 +41,12 @@ The data frame consists of 358 rows representing hourly measurements and 15 vari
 
 ## A further examination of the dataset:
 
-The dataset is comprised of `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
+Take a brief look at the data set:
+```{r brief}
+str(early_january_weather)
+```
 
+The dataset is comprised of `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
 
 Some important values are as follows:
 
