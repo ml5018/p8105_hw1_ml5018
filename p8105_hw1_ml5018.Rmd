@@ -9,13 +9,33 @@ This is a R Markdown document for homework 1.
 
 # Problem 1
 
+Load the libraray and dataset for further usage:
+
 ```{r setup, include = FALSE}
-install.packages("moderndive")
+install.packages("moderndive", repos = "http://cran.us.r-project.org")
 ```
 
 ```{r loading}
 library(moderndive)
 data("early_january_weather")
 ```
+
+A short description of the dataset:
+
+This dataset contains hourly meterological data for LGA, JFK and EWR for the month of January 2013. This is a subset of the weather data frame from nycflights13.
+
+The data frame consists of 358 rows representing hourly measurements and 15 variables:
+
+* origin: Weather station. Named origin to facilitate merging with nycflights13::flights data.
+* year, month, day, hour: Time of recording.
+* temp, dewp:Temperature and dewpoint in F.
+* humid: Relative humidity.
+* wind_dir, wind_speed, wind_gust: Wind direction (in degrees), speed and gust speed (in mph).
+* precip: Precipitation, in inches.
+* pressure: Sea level pressure in millibars.
+* visib: Visibility in miles.
+* time_hour: Date and hour of the recording as a POSIXct date.
+
+
 
 
