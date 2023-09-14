@@ -16,7 +16,7 @@ install.packages("moderndive", repos = "http://cran.us.r-project.org")
 install.packages("psych", repos = "http://cran.us.r-project.org")
 ```
 
-```{r loading}
+```{r loading, message = FALSE}
 library(tidyverse)
 library(psych)
 library(moderndive)
@@ -61,7 +61,9 @@ ggplot(data = early_january_weather,
        mapping = aes(x = time_hour, y = temp, color = humid)) + geom_point()
 ```
 
-It can easily be seen from the plot that despite the fluctuation in the process, the temperature tended to go up as time passed by, and the humidity also went up from 1 January to 15 January.
+Some patterns can easily be observed from the plot: 
+The temperature kept fluctuating as time passed by, with two enormous drop at the strat and end of the whole period. In spite of that, the overall trend tended to go up from 1 January to 15 January.
+The humidity was fluctuate as well, with an obvious raise around 14 January.
 
 ## Export the plot as pdf file:
 
@@ -104,6 +106,13 @@ mean(Prob2_df)
 
 The warning information suggested that the mean value of char_sample and fact_sample could not be obtained since these two variables are neither numeric nor logical.
 
+For these two variables, the mean function returns `NA`:
+
+```{r uncountable mean, error = TRUE}
+mean(Prob2_df %>% pull(3))
+mean(Prob2_df %>% pull(4))
+```
+
 To avoid such problem, calculate only the mean of numeric and logical variables in the data frame, using `pull` function to achieve this goal.
 
 The library `tidyverse`, which contains the `pull` function to be used, has already been loaded in Problem 1.
@@ -112,5 +121,18 @@ The mean value of norm_sample is `r mean(Prob2_df %>% pull(1))`
 
 The mean value of logic_sample is `r mean(Prob2_df %>% pull(2))`
 
+## Conversion variables to numeric
 
+Use `pull` and `as.numeric` to access the variables in the data frame and convert them into numeric.
 
+```{r conversion, eval = FALSE}
+logic_to_num = as.numeric(Prob2_df %>% pull(2))
+char_to_num = as.numeric(Prob2_df %>% pull(3))
+fact_to_num = as.numeric(Prob2_df %>% pull(4))
+```
+
+The result of the code above suggested the logical variable could be converted to numeric smoothly, with the value `TRUE` and `FALSE` converted to 1 and 0 respectively.
+Yet when the character variable was converted, `NA` was introduced by coersion as a replacement of all the characters.
+And for the factor variable, the three levels of factors were converted to numeric 1, 2 and 3.
+
+It could be inferred from the phenomenon that the character could not be recognized when converting into numeric, thus explained why the mean function did not work when using the whole data frame as the object.
