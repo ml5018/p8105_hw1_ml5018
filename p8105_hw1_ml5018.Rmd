@@ -69,5 +69,16 @@ It can easily be seen from the plot that despite the fluctuation in the process,
 ggsave("p8105_hw1_ml5018_plot1.pdf")
 ```
 
+# Problem 2
+
+## Data frame creation
+
+To create a data frame comprised of:
+
+* a random sample of size 10 from a standard Normal distribution;
+* a logical vector indicating whether elements of the sample are greater than 0;
+* a character vector of length 10;
+* a factor vector of length 10, with 3 different factor “levels”.
+
 
 
