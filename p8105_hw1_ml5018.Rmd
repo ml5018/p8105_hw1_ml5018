@@ -1,0 +1,6 @@
+---
+title: "p8105_hw1_ml5018"
+author: "Luan Mengxiao"
+date: 2023-09-14
+output: github_document
+---
