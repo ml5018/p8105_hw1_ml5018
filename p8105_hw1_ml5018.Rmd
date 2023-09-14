@@ -80,5 +80,17 @@ To create a data frame comprised of:
 * a character vector of length 10;
 * a factor vector of length 10, with 3 different factor “levels”.
 
+```{r data frame}
+sample <- c("medicine","nursing","biostatistics","medicine","medicine",
+            "biostatistics","nursing","biostatistics","nursing","medicine")
+Prob2_df = tibble(
+  norm_sample = rnorm(10),
+  logic_sample = norm_sample > 0,
+  char_sample = sample,
+  fact_sample = factor(sample)
+)
+```
 
+Use the code above to generate a data frame as follow:
+`r print(Prob2_df)`
 
