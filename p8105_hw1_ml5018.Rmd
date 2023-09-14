@@ -94,3 +94,23 @@ Prob2_df = tibble(
 Use the code above to generate a data frame as follow:
 `r print(Prob2_df)`
 
+## Calculate the mean of each variable
+
+Directly utilize `mean` function to calculate the mean of the variables in the data frame:
+
+```{r direct mean, error = TRUE}
+mean(Prob2_df)
+```
+
+The warning information suggested that the mean value of char_sample and fact_sample could not be obtained since these two variables are neither numeric nor logical.
+
+To avoid such problem, calculate only the mean of numeric and logical variables in the data frame, using `pull` function to achieve this goal.
+
+The library `tidyverse`, which contains the `pull` function to be used, has already been loaded in Problem 1.
+
+The mean value of norm_sample is `r mean(Prob2_df %>% pull(1))`
+
+The mean value of logic_sample is `r mean(Prob2_df %>% pull(2))`
+
+
+
