@@ -13,12 +13,10 @@ This is a R Markdown document for homework 1.
 
 ```{r setup, include = FALSE}
 install.packages("moderndive", repos = "http://cran.us.r-project.org")
-install.packages("psych", repos = "http://cran.us.r-project.org")
 ```
 
 ```{r loading, message = FALSE}
 library(tidyverse)
-library(psych)
 library(moderndive)
 data("early_january_weather")
 ```
@@ -51,7 +49,7 @@ The dataset is comprised of `r nrow(early_january_weather)` rows and `r ncol(ear
 Some important values are as follows:
 
 ```{r description}
-describe(data.frame(early_january_weather[1:14]))
+skimr::skim(early_january_weather)
 ```
 
 The mean temperature in the data is `r mean(early_january_weather$temp)` F.
