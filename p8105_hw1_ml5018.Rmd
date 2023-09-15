@@ -96,7 +96,9 @@ Prob2_df = tibble(
 ```
 
 Use the code above to generate a data frame as follow:
-`r print(Prob2_df)`
+```{r data output}
+Prob2_df
+```
 
 ## Calculate the mean of each variable
 
