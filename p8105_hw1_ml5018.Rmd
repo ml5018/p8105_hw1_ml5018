@@ -44,12 +44,21 @@ Take a brief look at the data set:
 str(early_january_weather)
 ```
 
+```{r datasize, eval = FALSE}
+nrow(early_january_weather)
+ncol(early_january_weather)
+```
+
 The dataset is comprised of `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
 
 Some important values are as follows:
 
 ```{r description}
 skimr::skim(early_january_weather)
+```
+
+```{r mean, eval = FALSE}
+mean(early_january_weather$temp)
 ```
 
 The mean temperature in the data is `r mean(early_january_weather$temp)` F.
